@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular IMC</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+</head>
+<body>
+   <div>
+    <h1>CALCULADORA DE IMC: Indice de Masa Corporal</h1>
+    <table >
+        <tr>
+         <th><p class="titulo">Calcular índice de masa corporal</p></th>
+        </tr>
+        <tr>
+            <td><p class="texto">Ingrese su peso en kg:</p></td></p></td>
+            <td><input type="number"  placeholder="peso (kg)" id="kg" required autofocus></td>
+        </tr>
+        <tr>
+            <td><p class="texto">Ingrese su altura en metros:</p></td>
+            <td><input type="number" id="m" placeholder="altura (m)" required></td>
+            
+        </tr>
+        <br>
+        <tr>
+            <td class="boton"><button id="calc">Calcular</button></td>
+          
+        </tr>
+        <tr>
+            <!-- resultado en js -->
+            <td> <p class="texto">IMC:</p><span id="imc"></span></td>
+           
+        </tr>
+        <tr>
+             <!-- lectura en js -->
+            <td><p class="texto">Lectura: </p><span id="lectura"></span></td>
+        </tr>
+  
+    </table>   
+
+
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

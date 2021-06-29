@@ -1,0 +1,53 @@
+h1{
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    color:#688386;
+
+}
+table{
+    width: 50%;
+    margin:auto;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding:10px;
+    background-color:#A7B8BA;
+}
+
+button{
+ width: 100%;
+ font-size: 150%;
+}
+.ac{
+    color:red;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #363E40;
+}
+.resultado{
+    height: 150px;
+    background-color: rgb(252, 246, 246);
+    color: lightslategray;
+    font-size: 40px;
+    font-family: 'Orbitron', sans-serif;
+   
+  
+}
+
+.teclas{
+    font-family: 'Orbitron', sans-serif;
+    background-color: #303637;
+    color:blanchedalmond;
+}
+.teclas:hover{
+    color:#06681C;
+}
+.ac:hover{
+    color:#F67F08;
+}
+/*poner el responsive*/
+@media only screen and(max-width:600px){ table{
+width: 90%;
+margin:auto;
+}
+
+}

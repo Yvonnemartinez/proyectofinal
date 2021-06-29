@@ -1,0 +1,48 @@
+{
+    "basic_info": {
+      "name": "Yvonne Martinez",
+      "titles": [ "Junior Front-end Developer" ],
+      "social": [
+        {
+          "name": "github",
+          "url": "https://github.com/Yvonnemartinez/",
+          "class": "fab fa-github"
+        },
+        {
+          "name": "instagram",
+          "url": "https://www.instagram.com",
+          "class": "fab fa-instagram"
+        }
+      ],
+      "image": "yvonne_1.jpg"
+    },
+    "skills": {
+      "icons": [
+        {
+          "name": "HTML 5",
+          "class": "devicon-html5-plain",
+          "level": "70"
+        },
+        {
+          "name": "CSS 3",
+          "class": "devicon-css3-plain",
+          "level": "60"
+        },
+        {
+          "name": "JavaScript",
+          "class": "devicon-javascript-plain",
+          "level": "40"
+        },
+        {
+          "name": "Bootstrap",
+          "class": "devicon-bootstrap-plain",
+          "level": "55"
+        },
+        {
+          "name": "React",
+          "class": "devicon-react-plain",
+          "level": "45"
+        }
+      ]
+    }
+  }
