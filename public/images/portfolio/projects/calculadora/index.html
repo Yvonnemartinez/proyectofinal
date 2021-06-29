@@ -16,40 +16,120 @@
 </head>
 <body>
     <h1>Calculadora básica</h1>
-    <table class="calculadora">
+    <table id="calculadora" class="calculadora">
         <tr>
-            <td colspan="4" ><button onclick="..." class="resultado">0</button></td>
+            <td colspan="4" ><input id="valor_numero"  class="resultado cajita_valor" readonly="true" value="0"></td>
         </tr>
         <tr>
-            <td><button class="teclas" onclick="...">1</button></td>
-            <td><button class="teclas" onclick="...">2</button></td>
-            <td><button class="teclas" onclick="...">3</button></td>
-            <td><button class="teclas" onclick="...">+</button></td>
+            <td><button class="teclas" type="Button" id="1" value="1" onclick="darNumero('1')">1</button></td>
+            <td><button class="teclas" type="Button" id="2" value="2" onclick="darNumero('2')">2</button></td>
+            <td><button class="teclas" type="Button" id="3" value="3" onclick="darNumero('3')">3</button></td>
+            <td><button class="teclas" type="Button" id="Sumar" onclick="operar(1)">+</button></td>
         </tr>
         <tr>
-            <td><button class="teclas" onclick="...">4</button></td>
-            <td><button class="teclas" onclick="...">5</button></td>
-            <td><button class="teclas" onclick="...">6</button></td>
-            <td><button class="teclas" onclick="...">-</button></td>
+            <td><button class="teclas" type="Button" id="4" value="4" onclick="darNumero('4')">4</button></td>
+            <td><button class="teclas" type="Button" id="5" value="5" onclick="darNumero('5')">5</button></td>
+            <td><button class="teclas" type="Button" id="6" value="6" onclick="darNumero('6')">6</button></td>
+            <td><button class="teclas boton funcion" type="Button" id="Restar" value="-" onclick="operar(2)">-</button></td>
 
         </tr>
         <tr>
-            <td><button class="teclas" onclick="...">7</button></td>
-            <td><button class="teclas" onclick="...">8</button></td>
-            <td><button class="teclas" onclick="...">9</button></td>
-            <td><button class="teclas" onclick="...">*</button></td>
+            <td><button class="teclas" type="Button" id="7" value="7" onclick="darNumero('7')">7</button></td>
+            <td><button class="teclas" type="Button" id="8" value="8" onclick="darNumero('8')">8</button></td>
+            <td><button class="teclas" type="Button" id="9" value="9" onclick="darNumero('9')">9</button></td>
+            <td><button class="teclas" type="Button" id="Multiplicar" value="x" onclick="operar(3)">*</button></td>
         </tr>
         <tr>
-            <td colspan="3"><button class="teclas" onclick="...">0</button></td>
-            <td><button class="teclas" onclick="...">/</button></td>
+            <td colspan="3"><button class="teclas" type="Button" id="0" value="0" onclick="darNumero('0')">0</button></td>
+            <td><button class="teclas" type="Button" id="Dividir" value="/" onclick="operar(4)" >/</button></td>
         </tr>
         <tr>
-            <td colspan="2"><button onclick="..." class="ac">AC</button></td>
-            <td><button class="teclas" onclick="...">.</button></td>
-            <td><button class="teclas" onclick="...">=</button></td>
+            <td colspan="2"><button onclick="" class="ac">AC</button></td>
+            <td><button class="teclas" type="Button" id="," value="," onclick="darComa()">.</button></td>
+            <td><button class="teclas" type="Button" id="igual" value="=" onclick="esIgual()" > =</button></td>
         </tr>
     </table>
 
-    <script></script>
+    <script>
+         //Declaracion de variables
+	        var num1 = 0;
+	        var num2 = 0;
+	        var opera;
+
+        //Función que coloca el número presionado
+        function darNumero(numero){
+            if(num1==0 && num1 !== '0.'){
+                num1 = numero;
+            }else{
+                num1 += numero;
+            }
+            refrescar();
+        }
+
+        //Función que coloca la coma al presionar dicho botón
+        function darComa(){
+            if(num1 == 0) {
+                num1 = '0.';
+            } else if(num1.indexOf('.') == -1) {
+                num1 += '.';
+            }
+            refrescar();
+        }
+
+        //Función que coloca la C al presionar dicho botón
+        function darC(){
+            num1 = 0;
+            num2 = 0;
+            refrescar();
+        }
+
+
+        //Esta función realiza las distintas operaciones aritméticas en función del botón pulsado
+        function operar(valor){
+            if (num1 == 0){
+                num1 = parseFloat(document.getElementById("valor_numero").value);
+            }
+            num2 = parseFloat(num1);
+            num1= 0;
+            opera = valor;
+        }
+
+        //Función para pulsar igual
+            /*
+        	suma = 1
+        	resta = 2
+        	multiplicacion = 3
+        	division = 4
+        	potencia = 5
+        */
+
+        function esIgual(){
+            num1 = parseFloat(num1);
+            switch (opera){
+                case 1:
+                    num1 += num2;
+                break;
+                case 2:
+                    num1 = num2 - num1;
+                break;
+                case 3:
+                    num1 *= num2;
+                break;
+                case 4:
+                    num1 = num2 / num1;
+                break;
+                case 5:
+                    num1 = Math.pow(num2, num1);
+                break;
+            }
+            refrescar();
+            num2 = parseFloat(num1);
+            num1 = 0;
+        }
+
+        function refrescar(){
+            document.getElementById("valor_numero").value = num1;
+        }
+    </script>
 </body>
 </html>
